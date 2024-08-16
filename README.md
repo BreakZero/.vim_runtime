@@ -1,10 +1,15 @@
-git clone https://github.com/your-username/your-vim-config.git ~/.vim_runtime
-ln -s ~/.vim_runtime/.vimrc ~/.vimrc
-cp -r ~/.vim_runtime/plugged ~/.vim/plugged
+### How to start
+1. Clone repos into local
+   > git clone https://github.com/BreakZero/.vim_runtime.git ~/.vim_runtime
 
-然后，在 Vim 中运行 :PlugInstall 来安装插件。
+2. Setup vim 
 
-安装vim-plug
+    > ln -s ~/.vim_runtime/.vimrc ~/.vimrc
+    > cp -r ~/.vim_runtime/plugged ~/.vim/plugged
 
-> curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+3. Install vim-plug
+
+    > curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+4. Install plugins
+    Run `"PluginUpdate` in vim
