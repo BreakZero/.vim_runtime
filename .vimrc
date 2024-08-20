@@ -22,6 +22,7 @@ set smartindent           " 启用智能缩进
 set wrap                  " 自动换行
 set backupdir=~/.vim/backup//  " 设置备份文件目录
 set undodir=~/.vim/undo//      " 设置撤销文件目录
+set directory^=$HOME/.vim/swap// "  .swp 文件的存储位置
 set undofile              " 启用撤销文件
 set backup                " 启用备份文件
 

@@ -13,3 +13,6 @@
 
 4. Install plugins
     Run `"PluginUpdate` in vim
+
+5. Create dir
+    > mkdir -p ~/.vim/backup ~/.vim/swap ~/.vim/undo
