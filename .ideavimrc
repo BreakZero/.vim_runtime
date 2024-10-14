@@ -1,0 +1,160 @@
+" To get a list of Actions run `:actionlist `
+" let mapleader = ','
+let mapleader = " "
+" let mapleader = "\<SPACE>"
+
+set ignorecase smartcase
+set NERDTree
+set hlsearch
+set showmode
+set scrolloff=5
+set history=1000
+set surround
+set incsearch
+set number relativenumber
+set smartcase
+set hlsearch
+set visualbell
+set noerrorbells
+set easymotion
+set commentary
+set ideajoin
+set exchange
+set multiple-cursors
+set sneak
+set which-key
+
+" clear the search buffer when hitting return
+ nnoremap <Leader>/ :nohlsearch<cr>
+
+" To copy text to the end-of-line, press Y.
+" This mapping sets up Y to be consistent with
+" the C and D operators, which act from the cursor
+" to the end of the line. The default behavior of Y
+" is to yank the whole line.
+nnoremap Y y$
+
+" Shortcut for escape
+imap jj <Esc>
+imap jk <Esc>
+
+" When in normal mode and I hit Enter,
+" then save file please
+nmap <CR> :action ReformatCode<CR> :write<CR>
+nnoremap <Leader>F  :action ReformatCode<CR> :write<CR>
+
+" Quick window navigation
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-L> <C-W>l
+map <C-H> <C-W>h
+
+nmap <Leader>l :action NextTab<CR>
+
+" Shortcut for copying to/from System Clipboard
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>P "+P
+
+" Greatest remap EVER!!
+" Let me explain, this remap while in visiual mode
+" will delete what is currently highlighted and replace it
+" with what is in the register BUT it will YANK (delete) it
+" to a VOID register. Meaning I still have what I originally had
+" when I pasted. I don't loose the previous thing I YANKED!
+vnoremap <leader>p "_dP
+
+" Splitting Windows
+nmap <Leader>v :vsplit<CR>
+nmap <Leader>h :split<CR>
+
+" nmap <leader>fs :action FileStructurePopup<CR>
+
+
+" Some search and replace shortcuts
+" nnoremap <Leader><Leader>r :%s///g<Left><Left>
+" nnoremap <Leader><Leader>rc :%s///g<Left><Left><Left>
+nnoremap <Leader><Leader>r :%s//g<Left><Left>
+"" Visual Mode
+" xnoremap <Leader><Leader>r :s///g<Left><Left>
+" xnoremap <Leader><Leader>rc :s///g<Left><Left><Left>
+xnoremap <Leader><Leader>r :s//g<Left><Left>
+
+" Project Shortcuts
+" =================
+" Close Project
+
+" Some Action commands to memic my native vim
+" For a list of :action try :actionlist
+" ===========================================
+" Hide open panels
+nmap <Leader>w :action HideAllWindows<CR>
+
+" Open Global Find Dialog box
+nmap <Leader>fp :action FindInPath<CR>
+
+" Open Terminal
+nmap <Leader>t :action ActivateTerminalToolWindow<CR>
+
+" Open recent project dialog box
+nmap <Leader><Leader>m :action ManageRecentProjects<CR>
+
+" Mapping to mimic BufferExplorer
+" nmap <Leader>be :action Switcher<CR>
+nmap <Leader>fb :action RecentFiles<CR>
+nmap <Leader>ff :action GotoFile<CR>
+nmap <Leader>fa :action GotoAction<CR>
+nmap <Leader>fg :action SearchEverywhere<CR>
+nmap <Leader><Leader>b :action RecentFiles<CR>
+
+" Toggle code minimap
+nmap <Leader>m :action CodeGlance.toggle<CR>
+
+" Nerdtree want to be
+" nmap <Leader>nt :action ActivateProjectToolWindow<CR>
+nmap <Leader>nt :NERDTreeToggle<CR>
+nnoremap <Leader>nn :NERDTreeFocus<CR>
+nnoremap <Leader>nf :NERDTreeFind<CR>
+
+" Toggle ToggleDistractionFreeMode
+nmap <Leader>df :action ToggleDistractionFreeMode<CR>
+
+" Quick Quite
+nnoremap <leader>q :q <CR>
+
+"Coding Formating
+" ===============
+nnoremap <leader>cf :action ReformatCode<CR>
+
+
+" XDebug Shortcuts
+nmap <Leader>bp :action ToggleLineBreakpoint<CR>
+" Jump to Source
+nmap <C>] :action XDebugger.JumpToSource
+nmap <Leader>gd :action GotoDeclaration<CR>
+
+" Commenting
+nmap <Leader>cc :action CommentByLineComment<CR>
+nmap <Leader>cb :action CommentByBlockComment<CR>
+nmap <Leader>c<Space> :action CommentByLineComment<CR>
+nmap <Leader>cb<Space> :action CommentByBlockComment<CR>
+
+" Refactoring
+nmap <Leader>rt :action Refactorings.QuickListPopupAction<CR>
+nmap <Leader>sa :action ShowIntentionActions<CR>
+nmap <Leader>rn :action RenameElement<CR>
+"nmap csw' :action Macro.surround_with_single_quote<CR>
+
+" Move visual block
+vnoremap J :m '>+1<CR>
+" xnoremap K :m '<-2<CR>
+vnoremap K :m '<-2<CR>
+
+" Put search results in the middle of the screen
+nnoremap n nzz
+nnoremap N Nzz
+
+" Run, Debug, Stop
+map <Leader>ar :action Run<CR>
+map <Leader>ad :action Debug<CR>
+map <Leader>st :action Stop<CR>
